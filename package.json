@@ -1,0 +1,35 @@
+{
+  "name": "form-desafio",
+  "version": "1.0.0",
+  "description": "��#\u0000 \u0000d\u0000e\u0000s\u0000a\u0000f\u0000i\u0000o\u0000-\u0000t\u0000h\u0000u\u0000n\u0000d\u0000e\u0000r\u0000s\u0000\r\u0000 \u0000",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "npx cypres open",
+    "cy:run": "npx cypres run",
+    "report:merge": "mochawesome-merge > index.json",
+    "report:mocha": "marge index.json",
+    "report:clean": "rimraf mochawesome-report index.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinCardoso/desafio-thunders.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robinCardoso/desafio-thunders/issues"
+  },
+  "homepage": "https://github.com/robinCardoso/desafio-thunders#readme",
+  "devDependencies": {
+    "change": "0.0.0",
+    "cypress": "^8.5.0",
+    "rimraf": "^3.0.2"
+  },
+  "dependencies": {
+    "cypress-multi-reporters": "^1.5.0",
+    "mochawesome": "^6.3.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  }
+}
