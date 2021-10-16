@@ -20,13 +20,10 @@ describe('Cadastro de Clientes', () => {
 
             /* Inserindo um e-mail */
             cy.get('div input#email_create').type(chance.email())
-            cy.get('.page-heading').click();
+            cy.get('#SubmitCreate').click();
 
                 /* Verificar se o e-mail informado é valido */
                 cy.get('div[class="form-group form-ok"]').should('be.visible').then(() => {
-
-                    /* Clicar para registrar */
-                    cy.get('button#SubmitCreate').click();
 
                     /* Verifica se o formulário de cadastro esta visível*/
                     cy.get('div.account_creation h3').contains('Your personal information').then(() => {
