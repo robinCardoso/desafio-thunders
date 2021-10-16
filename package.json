@@ -22,8 +22,9 @@
   },
   "homepage": "https://github.com/robinCardoso/desafio-thunders#readme",
   "devDependencies": {
-    "change": "0.0.0",
+    "chance": "^1.1.8",
     "cypress": "^8.5.0",
+    "cypress-plugin-tab": "^1.0.5",
     "rimraf": "^3.0.2"
   },
   "dependencies": {
