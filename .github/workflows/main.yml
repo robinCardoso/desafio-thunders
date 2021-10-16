@@ -1,0 +1,39 @@
+name: DesafioChapterIV
+
+# Gastilhos - responsavel por disparar o teste
+# Programados ou acionados atraves de evento.
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+
+# Defininda um ambiente para o teste.
+
+    runs-on: ubuntu-latest
+# Preparando a maquina para os teste - pois a maquina inicia zerada
+    steps:
+    - uses: actions/checkout@v2
+
+# Seput da Versão do NODE
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14.x
+
+    - run: npm install
+    - run: npm run cy:run
+      continue-on-error: true
+    - run: npm run cy:run
+    - run: npm report:merge
+    - run: npm report:mocha
+
+# Github Pages - publicas o relatório
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: mochawesome-report
