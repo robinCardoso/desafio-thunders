@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-16T19:59:43.858Z",
+    "end": "2021-10-16T20:00:10.609Z",
+    "duration": 26751,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "12311060-51a5-4636-b790-c7618d23dcb0",
+      "title": "",
+      "fullFile": "cypress/integration/criando-cadastro.spec.js",
+      "file": "cypress/integration/criando-cadastro.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "955bc41e-1294-43c2-82b5-723f950525af",
+          "title": "Cadastro de Clientes",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Criando novos cadastros de clientes e verificando se cadastro foi concluido.",
+              "fullTitle": "Cadastro de Clientes Criando novos cadastros de clientes e verificando se cadastro foi concluido.",
+              "timedOut": null,
+              "duration": 23554,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "/* Acessando WEB Site */\ncy.visit('http://automationpractice.com/index.php');\n/* Clicar em Sign in */\ncy.get('div a.login').click();\n/* Verificando se a formulário para criação de conta esta visivel */\ncy.contains('Create an account').then(() => {\n  /* Inserindo um e-mail */\n  cy.get('div input#email_create').type(chance.email());\n  cy.get('.page-heading').click();\n  /* Verificar se o e-mail informado é valido */\n  cy.get('div[class=\"form-group form-ok\"]').should('be.visible').then(() => {\n    /* Clicar para registrar */\n    cy.get('button#SubmitCreate').click();\n    /* Verifica se o formulário de cadastro esta visível*/\n    cy.get('div.account_creation h3').contains('Your personal information').then(() => {\n      /* Preenchendo o formulário */\n      cy.get('#id_gender1').check();\n      cy.get('#customer_firstname').type(chance.first());\n      cy.get('#customer_lastname').type(chance.last());\n      cy.get('#passwd').type('Min759636');\n      cy.get('div#uniform-days select').select('12');\n      cy.get('div#uniform-months select').select('September');\n      cy.get('div#uniform-years select').select('1989');\n      /* Irá selecionar \"newsletter!\" \"special offers\" */\n      cy.get('#newsletter').check();\n      cy.get('#optin').check();\n      cy.get('p #firstname').type('Emilio');\n      cy.get('p #lastname').type('Cacheco');\n      cy.get('p #company').type('Roupas');\n      cy.get('p #address1').type('Rede nacional do vestúario');\n      cy.get('p #address2').type('Prédio');\n      cy.get('p #city').type('Chapecó');\n      cy.get('p #id_state').select('South Carolina');\n      cy.get('p #postcode').type('89802');\n      cy.get('p #other').type('(55)49 9999 9999');\n      cy.get('p #phone').type('(55) 49 3333 2222');\n      cy.get('p #phone_mobile').type('(55) 49 8888 5555');\n      cy.get('p #alias').type(chance.address());\n      /* Clicar em registrar */\n      cy.get('#submitAccount > span').click();\n      /* Cadastro realizado com sucesso */\n      cy.contains('Welcome to your account').should('be.visible');\n    });\n  });\n});",
+              "err": {},
+              "uuid": "04775f17-bef6-405b-8579-e09954b5455b",
+              "parentUUID": "955bc41e-1294-43c2-82b5-723f950525af",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "04775f17-bef6-405b-8579-e09954b5455b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 23554,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
