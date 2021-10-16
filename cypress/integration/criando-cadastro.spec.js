@@ -62,7 +62,7 @@ describe('Cadastro de Clientes', () => {
                         /* Clicar em registrar */
                         cy.get('#submitAccount > span').click();
 
-                        /* Cadastro ralizado com sucesso */
+                        /* Cadastro realizado com sucesso */
                         cy.contains('Welcome to your account').should('be.visible');
                     })
                 })

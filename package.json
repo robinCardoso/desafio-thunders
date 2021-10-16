@@ -4,8 +4,8 @@
   "description": "��#\u0000 \u0000d\u0000e\u0000s\u0000a\u0000f\u0000i\u0000o\u0000-\u0000t\u0000h\u0000u\u0000n\u0000d\u0000e\u0000r\u0000s\u0000\r\u0000 \u0000",
   "main": "index.js",
   "scripts": {
-    "cy:open": "npx cypres open",
-    "cy:run": "npx cypres run",
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
     "report:merge": "mochawesome-merge > index.json",
     "report:mocha": "marge index.json",
     "report:clean": "rimraf mochawesome-report index.json"
